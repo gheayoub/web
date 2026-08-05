@@ -1,1 +1,81 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pricing — VMmo</title><link rel="stylesheet" href="assets/css/style.css"></head><body><header class="nav"><div class="container nav-inner"><a class="brand" href="index.html"><span class="logo"><svg viewBox="0 0 24 24" fill="none"><path d="M5 7l4.3 10h5.4L19 7" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>VMmo</span></a><nav class="nav-links"><a href="index.html">Home</a><a href="pricing.html">Pricing</a><a href="dashboard.html">Dashboard</a><a href="profile.html">Profile</a></nav><div class="nav-actions"><a class="btn btn-secondary" data-guest-only href="login.html">Login</a><a class="btn btn-primary" data-guest-only href="register.html">Register</a><a class="btn btn-secondary" data-auth-only href="dashboard.html">Akun</a><button class="btn btn-danger" data-auth-only data-logout>Logout</button><button class="mobile-toggle" aria-label="Menu">☰</button></div></div></header><main class="section"><div class="container"><div class="section-head"><span class="eyebrow">Paket VMmo</span><h2 style="margin-top:18px">Pilih akses yang tepat</h2><p>Harga di bawah adalah template tampilan. Ganti nominal dan metode pembelian sesuai sistem penjualan Anda.</p></div><div class="pricing-grid"><article class="card price-card"><h3>Free</h3><p class="muted">Untuk mencoba dasar VMmo.</p><div class="price">Rp0 <small>/selamanya</small></div><ul class="features"><li>1 karakter</li><li>1 tab</li><li>Waypoint</li><li>Dashboard akun</li></ul><a class="btn btn-secondary" href="register.html">Mulai gratis</a></article><article class="card price-card"><h3>Trial</h3><p class="muted">Mencoba fitur lanjutan.</p><div class="price">Trial <small>/terbatas</small></div><ul class="features"><li>3 karakter</li><li>Fitur lanjutan</li><li>Script & API</li><li>Simpan profil</li></ul><a class="btn btn-secondary" href="register.html">Buat akun</a></article><article class="card price-card featured"><span class="popular">Populer</span><h3>Premium</h3><p class="muted">Untuk penggunaan penuh.</p><div class="price">Hubungi <small>/admin</small></div><ul class="features"><li>10 karakter</li><li>Semua fitur utama</li><li>Auto login</li><li>Prioritas dukungan</li></ul><a class="btn btn-primary" href="profile.html">Lihat akun</a></article><article class="card price-card"><h3>Lifetime</h3><p class="muted">Akses tanpa kedaluwarsa.</p><div class="price">Lifetime <small>/sekali bayar</small></div><ul class="features"><li>Tidak kedaluwarsa</li><li>Akses fitur paket</li><li>Dashboard akun</li><li>Dukungan lisensi</li></ul><a class="btn btn-secondary" href="profile.html">Hubungi admin</a></article></div><p class="legal-note">Catatan: backend saat ini belum memiliki endpoint checkout otomatis. Aktivasi Trial/Premium/Lifetime dilakukan oleh admin server.</p></div></main><footer class="footer"><div class="container footer-inner"><div>© <span data-year></span> VMmo. All rights reserved.</div><div>Secure account & license portal.</div></div></footer><script src="assets/js/config.js"></script><script src="assets/js/api.js"></script><script src="assets/js/app.js"></script></body></html>
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Paket Free dan Premium VMmo dengan pilihan durasi fleksibel.">
+  <title>Pricing — VMmo</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><span class="logo"><svg viewBox="0 0 24 24" fill="none"><path d="M5 7l4.3 10h5.4L19 7" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>VMmo</span></a>
+    <nav class="nav-links" aria-label="Navigasi utama"></nav>
+    <div class="nav-actions"><a class="btn btn-secondary" data-guest-only href="login.html">Login</a><a class="btn btn-primary" data-guest-only href="register.html">Register</a><a class="btn btn-secondary" data-auth-only href="dashboard.html">Akun</a><button class="btn btn-danger" data-auth-only data-logout>Logout</button><button class="mobile-toggle" aria-label="Buka menu">☰</button></div>
+  </div>
+</header>
+
+<main class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Paket VMmo</span>
+      <h2 style="margin-top:18px">Free atau Premium</h2>
+      <p>Pilih akses gratis atau tentukan durasi Premium sesuai kebutuhan. Pembelian Premium diarahkan langsung ke WhatsApp admin.</p>
+    </div>
+
+    <section class="pricing-overview">
+      <article class="card price-card free-plan">
+        <span class="plan-tag">FREE</span>
+        <h3>Paket Free</h3>
+        <p class="muted">Untuk mulai mencoba fitur dasar VMmo.</p>
+        <div class="price">Rp0 <small>/ permanen</small></div>
+        <ul class="features">
+          <li>Akun dan dashboard</li>
+          <li>Akses fitur dasar</li>
+          <li>1 karakter</li>
+          <li>1 tab</li>
+        </ul>
+        <a class="btn btn-secondary" href="register.html">Mulai gratis</a>
+      </article>
+
+      <article class="card premium-summary">
+        <span class="popular">Direkomendasikan</span>
+        <span class="plan-tag">PREMIUM</span>
+        <h3>Akses Premium VMmo</h3>
+        <p class="muted">Untuk penggunaan automation yang lebih lengkap dengan durasi fleksibel.</p>
+        <ul class="features premium-features">
+          <li>Semua fitur utama</li>
+          <li>Auto Login</li>
+          <li>Script dan API</li>
+          <li>Simpan profil</li>
+          <li>Dukungan prioritas</li>
+        </ul>
+        <a class="btn btn-primary" data-wa-message="Halo Admin VMmo, saya ingin bertanya tentang paket Premium VMmo." href="#">Chat WhatsApp</a>
+      </article>
+    </section>
+
+    <div class="section-head duration-heading">
+      <h2>Pilih durasi Premium</h2>
+      <p>Nominal Premium belum dicantumkan karena belum diberikan. Setiap pilihan berikut langsung membuka chat WhatsApp untuk menanyakan harga dan aktivasi.</p>
+    </div>
+
+    <section class="duration-grid">
+      <article class="card duration-card"><span class="duration-label">Harian</span><h3>1 Hari</h3><div class="duration-price">Tanya harga</div><a class="btn btn-secondary" data-wa-message="Halo Admin VMmo, saya ingin membeli Premium VMmo durasi 1 hari. Mohon info harganya." href="#">Pilih 1 hari</a></article>
+      <article class="card duration-card"><span class="duration-label">Mingguan</span><h3>1 Minggu</h3><div class="duration-price">Tanya harga</div><a class="btn btn-secondary" data-wa-message="Halo Admin VMmo, saya ingin membeli Premium VMmo durasi 1 minggu. Mohon info harganya." href="#">Pilih 1 minggu</a></article>
+      <article class="card duration-card featured"><span class="duration-label">Bulanan</span><h3>1 Bulan</h3><div class="duration-price">Tanya harga</div><a class="btn btn-primary" data-wa-message="Halo Admin VMmo, saya ingin membeli Premium VMmo durasi 1 bulan. Mohon info harganya." href="#">Pilih 1 bulan</a></article>
+      <article class="card duration-card"><span class="duration-label">Tahunan</span><h3>1 Tahun</h3><div class="duration-price">Tanya harga</div><a class="btn btn-secondary" data-wa-message="Halo Admin VMmo, saya ingin membeli Premium VMmo durasi 1 tahun. Mohon info harganya." href="#">Pilih 1 tahun</a></article>
+      <article class="card duration-card"><span class="duration-label">Jangka panjang</span><h3>2 Tahun</h3><div class="duration-price">Tanya harga</div><a class="btn btn-secondary" data-wa-message="Halo Admin VMmo, saya ingin membeli Premium VMmo durasi 2 tahun. Mohon info harganya." href="#">Pilih 2 tahun</a></article>
+      <article class="card duration-card permanent-card"><span class="duration-label">Lebih dari 10 tahun</span><h3>Permanent</h3><div class="duration-price">Tanya harga</div><a class="btn btn-secondary" data-wa-message="Halo Admin VMmo, saya ingin membeli Premium VMmo Permanent (lebih dari 10 tahun). Mohon info harganya." href="#">Pilih Permanent</a></article>
+    </section>
+
+    <p class="legal-note">Aktivasi Premium dilakukan oleh admin setelah pemesanan melalui WhatsApp.</p>
+  </div>
+</main>
+
+<footer class="footer"><div class="container footer-inner"><div>© <span data-year></span> VMmo. All rights reserved.</div><div>Automation app & license portal.</div></div></footer>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
