@@ -10,7 +10,8 @@
       ['download.html', 'Download'],
       ['vps.html', 'Server VPS'],
       ['dashboard.html', 'Dashboard'],
-      ['profile.html', 'Profile']
+      ['profile.html', 'Profile'],
+      ['community.html', 'Community']
     ];
 
     nav.innerHTML = links
