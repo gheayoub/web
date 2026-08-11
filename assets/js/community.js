@@ -7,18 +7,31 @@ import {
   orderBy, 
   where, 
   Timestamp,
-  serverTimestamp
+  serverTimestamp,
+  doc,
+  updateDoc
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 // DOM Elements
 const postForm = document.getElementById('postForm');
 const postTitle = document.getElementById('postTitle');
+const postCategory = document.getElementById('postCategory');
 const postContent = document.getElementById('postContent');
 const submitBtn = document.getElementById('submitBtn');
 const alertBox = document.querySelector('[data-alert]');
 const guestMessage = document.getElementById('guestMessage');
 const feedContainer = document.getElementById('communityFeed');
 const feedLoader = document.getElementById('feedLoader');
+
+// Modal Elements
+const editModal = document.getElementById('editModal');
+const editForm = document.getElementById('editForm');
+const editPostId = document.getElementById('editPostId');
+const editPostTitle = document.getElementById('editPostTitle');
+const editPostCategory = document.getElementById('editPostCategory');
+const editPostContent = document.getElementById('editPostContent');
+const cancelEditBtn = document.getElementById('cancelEditBtn');
+const saveEditBtn = document.getElementById('saveEditBtn');
 
 let currentUser = null;
 
@@ -89,6 +102,7 @@ if (postForm) {
     if (!currentUser) return showAlert("Anda harus login untuk memposting.", true);
 
     const title = postTitle.value.trim();
+    const category = postCategory.value;
     const content = postContent.value.trim();
 
     submitBtn.disabled = true;
@@ -108,6 +122,7 @@ if (postForm) {
       // Simpan ke Firestore
       await addDoc(collection(db, "posts"), {
         title,
+        category,
         content,
         username: currentUser,
         createdAt: serverTimestamp()
@@ -146,14 +161,30 @@ async function loadPosts() {
 
     snapshot.forEach(doc => {
       const data = doc.data();
+      const docId = doc.id;
       const dateStr = data.createdAt ? data.createdAt.toDate().toLocaleString('id-ID') : 'Baru saja';
+      const badgeColor = getCategoryColor(data.category);
       
       const card = document.createElement('div');
       card.className = 'post-card animate-fade-up';
       
+      let editBtnHtml = '';
+      if (currentUser && currentUser === data.username) {
+        // Simpan data di atribut data- untuk mudah diambil saat edit
+        editBtnHtml = `<button class="btn-edit" onclick="openEditModal('${docId}', \`${encodeURIComponent(data.title)}\`, '${data.category || 'Lainnya'}', \`${encodeURIComponent(data.content)}\`)">Edit</button>`;
+      }
+
       card.innerHTML = `
-        <h4 class="post-title">${data.title}</h4>
-        <div class="post-meta">Oleh <b>${data.username}</b> pada ${dateStr}</div>
+        <div class="post-header">
+          <div>
+            <h4 class="post-title">
+              <span class="badge" style="background:${badgeColor}">${data.category || 'Lainnya'}</span> 
+              ${data.title}
+            </h4>
+            <div class="post-meta">Oleh <b>${data.username}</b> pada ${dateStr}</div>
+          </div>
+          ${editBtnHtml}
+        </div>
         <div class="post-content">${data.content}</div>
       `;
       feedContainer.appendChild(card);
@@ -164,6 +195,69 @@ async function loadPosts() {
     feedLoader.style.display = 'none';
     feedContainer.innerHTML = '<p style="color:#ffaaaa">Gagal mengambil data postingan. Pastikan Security Rules Database di Firebase Console mengizinkan pembacaan (Read).</p>';
   }
+}
+
+// Fungsi penunjang warna kategori
+function getCategoryColor(category) {
+  switch (category) {
+    case 'Tutorial': return '#28a745';
+    case 'Script': return '#007bff';
+    case 'Tanya Jawab': return '#ffc107';
+    case 'Diskusi': return '#17a2b8';
+    default: return '#6c757d';
+  }
+}
+
+// Buka modal edit
+window.openEditModal = function(id, encodedTitle, category, encodedContent) {
+  editPostId.value = id;
+  editPostTitle.value = decodeURIComponent(encodedTitle);
+  editPostCategory.value = category;
+  editPostContent.value = decodeURIComponent(encodedContent);
+  editModal.style.display = 'flex';
+}
+
+// Tutup modal edit
+if (cancelEditBtn) {
+  cancelEditBtn.addEventListener('click', () => {
+    editModal.style.display = 'none';
+    editForm.reset();
+  });
+}
+
+// Handler form edit
+if (editForm) {
+  editForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!currentUser) return;
+
+    const id = editPostId.value;
+    const title = editPostTitle.value.trim();
+    const category = editPostCategory.value;
+    const content = editPostContent.value.trim();
+
+    saveEditBtn.disabled = true;
+    saveEditBtn.textContent = 'Menyimpan...';
+
+    try {
+      const postRef = doc(db, "posts", id);
+      await updateDoc(postRef, {
+        title,
+        category,
+        content
+      });
+
+      showAlert("Postingan berhasil diperbarui!", false);
+      editModal.style.display = 'none';
+      loadPosts(); // Reload feed untuk menampilkan perubahan
+    } catch (error) {
+      console.error("Gagal mengedit:", error);
+      showAlert("Gagal menyimpan perubahan. Pastikan Anda memiliki koneksi internet.", true);
+    } finally {
+      saveEditBtn.disabled = false;
+      saveEditBtn.textContent = 'Simpan Perubahan';
+    }
+  });
 }
 
 // Jalankan
