@@ -62,14 +62,24 @@ async function checkDailyLimit(username) {
   startOfDay.setHours(0, 0, 0, 0);
 
   const postsRef = collection(db, "posts");
-  const q = query(
-    postsRef, 
-    where("username", "==", username),
-    where("createdAt", ">=", Timestamp.fromDate(startOfDay))
-  );
-
+  // Kita HANYA memfilter username dari database, untuk menghindari error "Index Required".
+  const q = query(postsRef, where("username", "==", username));
+  
   const snapshot = await getDocs(q);
-  return snapshot.size;
+  
+  // Filter tanggal dilakukan di JavaScript (client)
+  let todayCount = 0;
+  snapshot.forEach(doc => {
+    const data = doc.data();
+    if (data.createdAt) {
+      const postDate = data.createdAt.toDate();
+      if (postDate >= startOfDay) {
+        todayCount++;
+      }
+    }
+  });
+
+  return todayCount;
 }
 
 // Fungsi Submit Form
