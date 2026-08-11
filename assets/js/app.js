@@ -6,6 +6,7 @@
     const links = [
       ['index.html', 'Home'],
       ['pricing.html', 'Pricing'],
+      ['script.html', 'Script API'],
       ['download.html', 'Download'],
       ['vps.html', 'Server VPS'],
       ['dashboard.html', 'Dashboard'],
