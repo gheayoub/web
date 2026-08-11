@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Community — VMmo</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .post-card { margin-top: 15px; padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03); }
+    .post-title { margin: 0 0 5px 0; font-size: 1.2rem; }
+    .post-meta { font-size: 0.8rem; color: #aaa; margin-bottom: 10px; }
+    .post-content { white-space: pre-wrap; font-size: 0.95rem; margin-bottom: 15px; line-height: 1.5; }
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display: block; margin-bottom: 5px; font-weight: 500; font-size: 0.9rem; }
+    .form-group input[type="text"], .form-group textarea, .form-group input[type="file"] {
+      width: 100%; padding: 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); 
+      background: rgba(0,0,0,0.2); color: white; box-sizing: border-box; font-family: inherit;
+    }
+    .form-group textarea { min-height: 100px; resize: vertical; }
+    .loader { display: none; text-align: center; margin: 20px 0; font-weight: bold; }
+    .file-attachment { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); padding: 8px 12px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; }
+    .file-attachment:hover { background: rgba(255,255,255,0.2); }
+  </style>
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">
+      <span class="logo">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 7l4.3 10h5.4L19 7" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span>VMmo</span>
+    </a>
+    <nav class="nav-links"></nav>
+    <div class="nav-actions">
+      <a class="btn btn-secondary" data-guest-only href="login.html">Login</a>
+      <a class="btn btn-primary" data-guest-only href="register.html">Register</a>
+      <a class="btn btn-secondary" data-auth-only href="dashboard.html">Akun</a>
+      <button class="btn btn-danger" data-auth-only data-logout>Logout</button>
+      <button class="mobile-toggle" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<main class="dashboard animate-fade-up">
+  <div class="container">
+    <div class="dash-head">
+      <div>
+        <h1>VMmo <span class="gradient-text">Community</span></h1>
+        <p>Berbagi tutorial, script, dan file konfigurasi bersama pengguna lain.</p>
+      </div>
+    </div>
+
+    <div class="alert" data-alert></div>
+
+    <div class="dash-grid">
+      <!-- Form Buat Postingan -->
+      <section class="card">
+        <h3 style="margin-top:0">Buat Postingan Baru</h3>
+        <p class="muted" style="font-size: 0.85rem">Hanya untuk pengguna yang login. Maksimal 2 postingan per hari. Anda bisa menempelkan link (Google Drive, dll) di dalam artikel.</p>
+        
+        <div id="guestMessage" style="display: none; background: rgba(255,0,0,0.1); padding: 10px; border-radius: 6px; margin-bottom: 15px; border: 1px solid rgba(255,0,0,0.2);">
+          Anda harus <a href="login.html" style="color: white; text-decoration: underline;">login</a> untuk dapat membuat postingan.
+        </div>
+
+        <form id="postForm" style="margin-top: 15px;">
+          <div class="form-group">
+            <label for="postTitle">Judul Tutorial/Artikel</label>
+            <input type="text" id="postTitle" required placeholder="Contoh: Cara setup VMmo untuk game X">
+          </div>
+          <div class="form-group">
+            <label for="postContent">Isi Artikel</label>
+            <textarea id="postContent" required placeholder="Tulis panduan atau penjelasan Anda di sini... (Paste link file Anda di sini)"></textarea>
+          </div>
+          <button type="submit" id="submitBtn" class="btn btn-primary btn-block">Kirim Postingan</button>
+        </form>
+      </section>
+
+      <!-- Feed Postingan -->
+      <section class="card">
+        <h3 style="margin-top:0">Feed Komunitas</h3>
+        <div class="loader" id="feedLoader">Memuat postingan...</div>
+        <div id="communityFeed" style="margin-top: 15px; display: flex; flex-direction: column; gap: 15px;">
+          <!-- Postingan akan dimuat di sini oleh JS -->
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>© <span data-year></span> VMmo. All rights reserved.</div>
+    <div>Created by Adriana Vit</div>
+  </div>
+</footer>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/app.js"></script>
+<script type="module" src="assets/js/firebase-init.js"></script>
+<script type="module" src="assets/js/community.js"></script>
+</body>
+</html>
