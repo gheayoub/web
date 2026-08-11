@@ -1,0 +1,2401 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Script API — VMmo</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">
+      <span class="logo"><svg viewBox="0 0 24 24" fill="none"><path d="M5 7l4.3 10h5.4L19 7" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span>VMmo</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="profile.html">Profile</a>
+      <a href="script.html" class="active">Script API</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-secondary" data-guest-only href="login.html">Login</a>
+      <a class="btn btn-primary" data-guest-only href="register.html">Register</a>
+      <a class="btn btn-secondary" data-auth-only href="dashboard.html">Akun</a>
+      <button class="btn btn-danger" data-auth-only data-logout>Logout</button>
+      <button class="mobile-toggle" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<main class="docs-layout animate-fade-up">
+  <div class="container docs-container">
+    <aside class="docs-sidebar">
+      <h3>Daftar API</h3>
+      <nav>
+        <a href="#autoitemapi">AutoItemAPI</a>
+        <a href="#autolootapi">AutoLootAPI</a>
+        <a href="#autospellapi">AutoSpellAPI</a>
+        <a href="#backpackapi">BackpackAPI</a>
+        <a href="#calibrationapi">CalibrationAPI</a>
+        <a href="#characteractivityapi">CharacterActivityAPI</a>
+        <a href="#chatapi">ChatAPI</a>
+        <a href="#combatapi">CombatAPI</a>
+        <a href="#debugapi">DebugAPI</a>
+        <a href="#depotapi">DepotAPI</a>
+        <a href="#developmentapi">DevelopmentAPI</a>
+        <a href="#eventapi">EventAPI</a>
+        <a href="#goldapi">GoldAPI</a>
+        <a href="#groundapi">GroundAPI</a>
+        <a href="#inventoryapi">InventoryAPI</a>
+        <a href="#itemsapi">ItemsAPI</a>
+        <a href="#loginapi">LoginAPI</a>
+        <a href="#mapapi">MapAPI</a>
+        <a href="#menuapi">MenuAPI</a>
+        <a href="#mobdetectionapi">MobDetectionAPI</a>
+        <a href="#movementapi">MovementAPI</a>
+        <a href="#npcapi">NpcAPI</a>
+        <a href="#playbackapi">PlaybackAPI</a>
+        <a href="#playerapi">PlayerAPI</a>
+        <a href="#productionapi">ProductionAPI</a>
+        <a href="#recoveryapi">RecoveryAPI</a>
+        <a href="#scriptapi">ScriptAPI</a>
+        <a href="#shopapi">ShopAPI</a>
+        <a href="#skillapi">SkillAPI</a>
+        <a href="#statsapi">StatsAPI</a>
+        <a href="#statusmessageapi">StatusMessageAPI</a>
+        <a href="#storageapi">StorageAPI</a>
+        <a href="#storagestatusapi">StorageStatusAPI</a>
+        <a href="#taskrouterapi">TaskRouterAPI</a>
+        <a href="#tradehouseapi">TradeHouseAPI</a>
+        <a href="#useapi">UseAPI</a>
+        <a href="#waypointapi">WaypointAPI</a>
+      </nav>
+    </aside>
+    
+    <div class="docs-content">
+      <div class="dash-head" style="margin-bottom:30px;">
+        <div>
+          <h1>Dokumentasi Script API</h1>
+          <p>Referensi lengkap fungsi API yang dapat digunakan pada script automation VMmo.</p>
+        </div>
+      </div>
+
+      <section id="autoitemapi" class="api-section card">
+        <h2 class="api-title">AutoItemAPI</h2>
+        <p class="muted">Settings API for automatic item use/retrieve/store.<br><br>This API only changes state. AutoItemWorker owns the loop and calls public<br>APIs only: use.item(...), storage.retrieve(...), storage.retrieve_slot(...),<br>and storage.store(...).</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.autoitem.configure_use(enabled, item_id, cooldown)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autoitem.use(enabled, item_id, cooldown)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autoitem.configure_retrieve(enabled, item_id, replace_slot)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autoitem.retrieve(enabled, item_id, replace_slot)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autoitem.configure_store(enabled, item_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autoitem.store(enabled, item_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autoitem.configure_potion(stat, enabled, threshold, item_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autoitem.potion(stat, enabled, threshold, item_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autoitem.disable_use()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autoitem.disable_retrieve()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autoitem.disable_store()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autoitem.disable_potion(stat)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autoitem.disable_all()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autoitem.status(name)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="autolootapi" class="api-section card">
+        <h2 class="api-title">AutoLootAPI</h2>
+        <p class="muted">Configuration/status API for the AutoLootWorker.<br><br>GUI and scripts only change configuration through this API.  Ground-item<br>parsing, playback hold, goto and pickup remain owned by dedicated workers.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.autoloot.configure(enabled, item_ids, radius, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autoloot.enable(item_ids, radius)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autoloot.disable()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autoloot.set_items(item_ids)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autoloot.set_radius(radius)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autoloot.clear_ground()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autoloot.status()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autoloot.items()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autoloot.busy()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autoloot.enabled()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="autospellapi" class="api-section card">
+        <h2 class="api-title">AutoSpellAPI</h2>
+        <p class="muted">Auto-use backpack spell books/items with MP and cooldown guards.<br><br>This API only configures automation state.  The worker checks MP, slot,<br>cooldown, then calls the existing use.slot/backpack API.  It never builds<br>or sends item packets directly.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.autospell.configure(name, enabled, slot, mana_required, cooldown)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autospell.set_enabled(name, enabled)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autospell.enable(name)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autospell.disable(name)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autospell.attack(enabled, slot, mana_required, cooldown)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autospell.debuff(enabled, slot, mana_required, cooldown)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autospell.status(name)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.autospell.enabled(name)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="backpackapi" class="api-section card">
+        <h2 class="api-title">BackpackAPI</h2>
+        <p class="muted">Action API for the 9-slot backpack only.<br><br>This keeps destructive item actions away from InventoryAPI. Inventory and<br>DepotMail are storage/panel containers; use/drop/pickup are backpack tasks.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.summary()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.slots()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.items()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.get(slot_1_to_9)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.count(item_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.total_items()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.used_slots()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.empty_slots()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.free_slots()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.capacity()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.is_full()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.find_item_slot(item_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.find(item_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.use_item(item_id, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.item(item_id, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.use(item_id, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.use_slot(slot_1_to_9, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.slot(slot_1_to_9, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.drop_item(item_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.drop(item_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.drop_slot(slot_1_to_9)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.pickup(slot_1_to_9, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.pickup_to(slot_1_to_9, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.store_item(item_id, count)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.retrieve_item(item_id, count)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.last_change()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.last_reward()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.history(limit)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.on_item_added(handler)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.on_item_removed(handler)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.on_item_changed(handler)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.backpack.on_reward(handler)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="calibrationapi" class="api-section card">
+        <h2 class="api-title">CalibrationAPI</h2>
+        <p class="muted">API-only helper for finding absolute XYZ parser candidates.<br><br>This API records packet windows and known positions.  It does not move the<br>character and it does not guess final XYZ offsets.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.calibration.set_known_xyz(x, y, z, label)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.calibration.capture(label, packets)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.calibration.report()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.calibration.clear()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.calibration.last_report()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.calibration.snapshots()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="characteractivityapi" class="api-section card">
+        <h2 class="api-title">CharacterActivityAPI</h2>
+        <p class="muted">Read-only public API for the live character activity label.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.characteractivity.status()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.characteractivity.reason()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.characteractivity.summary()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="chatapi" class="api-section card">
+        <h2 class="api-title">ChatAPI</h2>
+        <p class="muted">Confirmed public-chat API.<br><br>Private and Guild formats are intentionally rejected until their captures<br>are available. No opcode or packet structure is guessed here.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.chat.send_public(text)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.chat.send(channel, text, target)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="combatapi" class="api-section card">
+        <h2 class="api-title">CombatAPI</h2>
+        <p class="muted">Compatibility wrapper.<br><br>The old lightweight combat/entity guard is no longer allowed to affect<br>playback by default. Old scripts using combat.enable(...) now toggle the<br>new TM212-style mob_detection state instead.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.combat.enable(value)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.combat.disable()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.combat.ignore_monsters(value)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="debugapi" class="api-section card">
+        <h2 class="api-title">DebugAPI</h2>
+        <p class="muted">Module API untuk DebugAPI</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.debug.fake_location(x, y, z)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.debug.set_xyz(x, y, z)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.debug.fake_hpmp(hp, mp, hp_max, mp_max, hp_percent, mp_percent)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.debug.packet_in_hex(hex_text, route)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.debug.parser_snapshot()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.debug.emit(event_name)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="depotapi" class="api-section card">
+        <h2 class="api-title">DepotAPI</h2>
+        <p class="muted">Module API untuk DepotAPI</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.depot.enter(source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.depot.leave(source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.depot.page(page, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.depot.next_page(source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.depot.previous_page(source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.depot.store(item_id, count, page, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.depot.retrieve(item_id, count, page, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.depot.retrieve_inventory(item_id, count, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.depot.retrieve_depotmail(item_id, count, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.depot.store_inventory(item_id, count, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.depot.store_slot(backpack_slot, depot_slot, page, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.depot.retrieve_slot(depot_slot, backpack_slot, page, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.depot.store_depotmail(item_id, count, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.depot.status()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.depot.items(container, page)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="developmentapi" class="api-section card">
+        <h2 class="api-title">DevelopmentAPI</h2>
+        <p class="muted">Explicit simulation namespace; never changes authoritative live state.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.development.snapshot()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.development.set_xyz(x, y, z)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.development.set_stats(hp, mp, hp_percent, mp_percent, hp_max, mp_max)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.development.set_skill(slot, ready, cooldown)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.development.packet_in_hex(hex_text, route)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="eventapi" class="api-section card">
+        <h2 class="api-title">EventAPI</h2>
+        <p class="muted">Module API untuk EventAPI</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.event.on(event_name, handler)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.event.once(event_name, handler)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.event.off(event_name, handler)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.event.subscribe(event_name, handler)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.event.unsubscribe(event_name, handler)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.event.emit(event_name)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="goldapi" class="api-section card">
+        <h2 class="api-title">GoldAPI</h2>
+        <p class="muted">Public gold balance and confirmed Gold Transfer workflow API.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.gold.balance()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.gold.balance_info()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.gold.validate(target, amount)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.gold.can_transfer(amount)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.gold.transfer(target, amount)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.gold.cancel()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.gold.auto_validate(target, amount)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.gold.auto_enable(target, amount)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.gold.auto_disable()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.gold.auto_status()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.gold.auto_enabled()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.gold.is_busy()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.gold.status()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.gold.request_result(request_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.gold.last_result()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.gold.wait(request_id, timeout)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="groundapi" class="api-section card">
+        <h2 class="api-title">GroundAPI</h2>
+        <p class="muted">Server-observed items on world tiles.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.ground.items()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.ground.find(item_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.ground.at(x, y, z)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.ground.nearest(item_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.ground.on_item_added(handler)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.ground.on_item_removed(handler)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="inventoryapi" class="api-section card">
+        <h2 class="api-title">InventoryAPI</h2>
+        <p class="muted">Inventory/backpack API.<br><br>The cache is event based.  Server parsers update it when inventory/backpack<br>packets arrive; API methods let scripts read it or set/clear slots for tests<br>without touching transport logic.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.summary()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.request()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.backpack()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.inventory()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.depotmail()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.depot()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.mail()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.find(item_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.find_all(item_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.count(item_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.total(item_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.find_item_slot(item_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.find_backpack_item_slot(item_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.find_inventory_item_slot(item_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.find_depotmail_item_slot(item_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.open_backpack()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.use_item(item_id, experimental)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.item(item_id, experimental)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.use_slot(slot, experimental)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.drop_item(item_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.drop_slot(slot)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.pickup(slot)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.store_item(item_id, count)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.retrieve_item(item_id, count)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.set_backpack(slot, item_id, count)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.set_inventory(slot, item_id, count)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.clear_backpack(slot)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.set_depotmail(slot, item_id, count)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.clear_inventory(slot)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.clear_depotmail(slot)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.reset()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.use_item_id(item_id, experimental)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.inventory.use_item_slot(slot, experimental)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="itemsapi" class="api-section card">
+        <h2 class="api-title">ItemsAPI</h2>
+        <p class="muted">Read-only item totals across Backpack and Inventory.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.items.find(item_id, containers)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.items.find_backpack(item_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.items.find_inventory(item_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.items.count(item_id, containers)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.items.total(item_id, containers)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.items.summary(containers)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.items.all(containers)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.items.detail(item_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.items.details()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.items.name(item_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="loginapi" class="api-section card">
+        <h2 class="api-title">LoginAPI</h2>
+        <p class="muted">Module API untuk LoginAPI</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.login.start(username, password, world, mode, host, port, auto_relogin)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.login.logout()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.login.delete_rms()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.login.set_mode(mode)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.login.set_auto_relogin(value)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.login.is_ready()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.login.wait_ready(timeout)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="mapapi" class="api-section card">
+        <h2 class="api-title">MapAPI</h2>
+        <p class="muted">Small public API for manual/passive tile state.<br><br>This API only records tile knowledge in MapState.  It does not move the<br>character and it does not change GotoWorker/PlaybackWorker pathing yet.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.map.block(x, y, z, reason)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.map.walkable(x, y, z, reason)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.map.unknown(x, y, z, reason)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.map.status(x, y, z)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.map.is_blocked(x, y, z)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.map.is_walkable(x, y, z)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.map.tile(x, y, z)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.map.mark_id(x, y, z, tile_id, reason)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.map.stairs(x, y, z, reason)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.map.is_stairs(x, y, z)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.map.around(radius, x, y, z)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.map.stair_from(x, y, z, direction)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.map.stair_summary()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.map.catalog(tile_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.map.summary()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.map.index_capture(reason)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.map.index_summary()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.map.index_records(limit)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.map.find_sprite(sprite_id, limit)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.map.find_id(sprite_id, limit)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.map.move_probe_summary()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.map.move_samples(limit)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="menuapi" class="api-section card">
+        <h2 class="api-title">MenuAPI</h2>
+        <p class="muted">Public menu actions routed through CommandQueue -> MenuWorker.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.menu.select_row(menu_id, row_id, action_id, source, menu_revision)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.menu.action(menu_id, action_id, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.menu.close(menu_id, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="mobdetectionapi" class="api-section card">
+        <h2 class="api-title">MobDetectionAPI</h2>
+        <p class="muted">Settings API for baseline mob safety and optional Mob Hunt.<br><br>Baseline exact-tile assist remains active when disabled. ``enabled`` toggles<br>only bounded off-route hunting from the active playback waypoint.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.mobdetection.configure(enabled, range, move_delay_ms, combat_delay_ms, ignore_names)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.mobdetection.enable(value)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.mobdetection.disable()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.mobdetection.set_range(value)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.mobdetection.set_delays(move_delay_ms, combat_delay_ms)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.mobdetection.ignore(names)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.mobdetection.status()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.mobdetection.enabled()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.mobdetection.kill_count()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.mobdetection.last_kill()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="movementapi" class="api-section card">
+        <h2 class="api-title">MovementAPI</h2>
+        <p class="muted">Module API untuk MovementAPI</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.movement.move(direction, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.movement.move_up()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.movement.move_down()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.movement.move_left()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.movement.move_right()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.movement.goto_location(x, y, z, source, anchor_xyz, max_roam, no_detour)</div>
+            <p class="method-desc">Queue the single public goto/move.to path.<br><br>``anchor_xyz``/``max_roam`` are optional safety bounds for dedicated<br>workers such as AutoLoot. Normal scripts/playback keep their existing<br>behavior when these arguments are omitted.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.movement.to(x, y, z, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.movement.goto(x, y, z, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.movement.move_raw(opcode)</div>
+            <p class="method-desc">API-only packet test for one-byte movement candidates.<br><br>Example:<br>    api.movement.move_raw('68')<br>    api.movement.move_raw(0x6A)</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.movement.pause(value)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.movement.resume()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.movement.set_xyz(x, y, z)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.movement.get_xyz()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.movement.is_busy()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.movement.queue_size()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="npcapi" class="api-section card">
+        <h2 class="api-title">NpcAPI</h2>
+        <p class="muted">Modern queued NPC API: exact name -> live UID -> interaction tile.<br><br>``search_start`` is the point where NPC discovery begins.  When omitted,<br>NpcWorker captures the live player XYZ after the playback hold has stopped<br>the current movement.  ``player_spot`` remains a compatibility alias only.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.npc.open(name, search_start, search_radius, timeout, template_id, max_probe_depth, task_key, force, player_spot)</div>
+            <p class="method-desc">Open an exact-name NPC using a dynamic search start.<br><br>Preferred use::<br><br>    npc.open("Seraphine", search_radius=7)<br><br>NpcWorker acquires the playback hold first, waits for movement to become<br>idle, then snapshots the current absolute XYZ as ``search_start``.<br>Supplying ``search_start`` is optional and explicit.  The legacy<br>``player_spot`` keyword is accepted as an alias so older scripts keep<br>loading, but it no longer means a return location.<br><br>``max_probe_depth`` is accepted for source compatibility and is exposed<br>in status, but blind cardinal probing is no longer used.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.npc.choose(option_id, timeout, require_dialog, message_settle)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.npc.choose_exact(text, timeout, require_dialog, message_settle)</div>
+            <p class="method-desc">Choose an exact option and wait for authoritative result evidence.<br><br>``require_dialog=True`` is intended for submenu navigation.  Generic<br>game messages are treated only as provisional evidence and cannot<br>complete the request until a newer NPC-dialog revision arrives.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.npc.close(timeout)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.npc.clear_dialog()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.npc.forget(reason, done, return_to_spot, timeout)</div>
+            <p class="method-desc">Forget the NPC task and release hold at the current player position.<br><br>``return_to_spot`` is retained only so old scripts do not raise a<br>TypeError.  NpcWorker deliberately ignores it because ``search_start``<br>is a discovery origin, not a return anchor.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.npc.cancel(reason)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.npc.status()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.npc.busy()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.npc.in_dialog()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.npc.text()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.npc.options()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.npc.target_name()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.npc.target_uid()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.npc.last_error()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.npc.request_result(request_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.npc.flag(task_key, name, default)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.npc.set_flag(task_key, name, value)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.npc.reset_task(task_key)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="playbackapi" class="api-section card">
+        <h2 class="api-title">PlaybackAPI</h2>
+        <p class="muted">Module API untuk PlaybackAPI</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.playback.start(loop, interval_ms)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.playback.configure(interval_ms, loop)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.playback.pause()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.playback.stop()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="playerapi" class="api-section card">
+        <h2 class="api-title">PlayerAPI</h2>
+        <p class="muted">Read-only server-backed player state and callback registration.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.player.summary()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.player.position()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.player.on_location(handler, mode)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.player.on_hp_changed(handler)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.player.on_mp_changed(handler)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="productionapi" class="api-section card">
+        <h2 class="api-title">ProductionAPI</h2>
+        <p class="muted">Restricted operator controls that are intentionally absent from the GUI.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.production.show_log(secret)</div>
+            <p class="method-desc">Reveal and select the hidden Log tab for this account.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.production.hide_log(secret)</div>
+            <p class="method-desc">Hide the Log tab again while keeping background logging active.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.production.toggle_log(secret)</div>
+            <p class="method-desc">Toggle visibility of the Log tab for this account.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.production.log_visible(secret)</div>
+            <p class="method-desc">Return whether the Log tab is currently visible.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="recoveryapi" class="api-section card">
+        <h2 class="api-title">RecoveryAPI</h2>
+        <p class="muted">Explicit recovery API.<br><br>Normal movement stays under api.movement / move.to.  Recovery is a separate<br>API so scripts can choose when stuck/off-route handling should be used.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.recovery.to(x, y, z, way_id, target_index)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.recovery.to_waypoint(index, way_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.recovery.is_busy()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.recovery.last_status()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.recovery.last_ok()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="scriptapi" class="api-section card">
+        <h2 class="api-title">ScriptAPI</h2>
+        <p class="muted">Module API untuk ScriptAPI</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.script.enable(value)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.script.is_enabled()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.script.is_running()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.script.active()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.script.run_id()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.script.on_start(handler)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.script.on_stop(handler)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.script.run_once(code)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.script.stop()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="shopapi" class="api-section card">
+        <h2 class="api-title">ShopAPI</h2>
+        <p class="muted">Packet/API based shop interface.<br><br>Commands are queued and executed by ShopWorker.  Read methods return the<br>current per-tab ShopState snapshot.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.shop.enter(shop)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.shop.leave()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.shop.buy_item(item_id, target_total, shop, count_containers)</div>
+            <p class="method-desc">Ensure selected containers contain ``target_total`` of item_id.<br><br>The worker buys in Backpack-sized batches, leaves the shop, stores the<br>purchased items with the existing Storage worker, refreshes server-fed<br>caches, recounts both owned containers, and repeats until reached.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.shop.sell_item(item_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.shop.sell_list(item_ids)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.shop.sell_all(container)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.shop.cancel()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.shop.status()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.shop.in_shop()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.shop.busy()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.shop.phase()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.shop.current_shop()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.shop.catalog()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.shop.last_error()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.shop.request_result(request_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="skillapi" class="api-section card">
+        <h2 class="api-title">SkillAPI</h2>
+        <p class="muted">Read/update skill L/R status through API.<br><br>Live status comes from server packet 0xA2.  API setters exist only for<br>scripts/tests/manual override; they do not send packets or use skills.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.skill.summary()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.skill.left()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.skill.right()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.skill.L()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.skill.R()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.skill.status(slot)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.skill.is_ready(slot)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.skill.scan(reason)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.skill.use(slot, require_server_ready, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.skill.probe_status(slot, source)</div>
+            <p class="method-desc">Queue one explicit skill cast to provoke a fresh server A2 status.<br><br>Unlike ``use``, this intentionally does not require cached readiness.<br>AutoSkill owns the one-shot admission state; normal casts remain strict.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.skill.use_r(source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.skill.use_l(source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.skill.auto_enable(slot, enabled)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.skill.auto_disable(slot)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.skill.auto_r(enabled)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.skill.auto_l(enabled)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.skill.auto_status(slot)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.skill.auto_enabled(slot)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.skill.set_ready(slot, ready)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.skill.set_cooldown(slot, seconds)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="statsapi" class="api-section card">
+        <h2 class="api-title">StatsAPI</h2>
+        <p class="muted">Read/update live HP/MP state through API.<br><br>Live packets provide current HP/MP (0x97/0x98) and target HP percent<br>(0x7E). Max HP/MP is not always sent by the server, so scripts/UI may set<br>max values once, then the parser keeps current/max/% in sync.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.stats.summary()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.stats.hp()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.stats.mp()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.stats.target()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.stats.exp()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.stats.gold()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.stats.set_max(hp, mp, hp_max, mp_max)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.stats.set_current(hp, mp)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.stats.set_percent(hp, mp)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.stats.request()</div>
+            <p class="method-desc">Return current HP/MP state.<br><br>This does not inject unknown packets.  Live HP/MP comes from server<br>push packets; scripts can safely poll this API.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="statusmessageapi" class="api-section card">
+        <h2 class="api-title">StatusMessageAPI</h2>
+        <p class="muted">Public API for visual in-client status messages.<br><br>For KEmulator this is rendered through the local gateway as a B4 status<br>message to the visual client.  It is display-only and is not forwarded to<br>the game server.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.statusmessage.send(text, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.statusmessage.show(text, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.statusmessage.message(text, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.statusmessage.status(text, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="storageapi" class="api-section card">
+        <h2 class="api-title">StorageAPI</h2>
+        <p class="muted">Active store/retrieve API for Backpack <-> Inventory transfers.<br><br>InventoryTransferWorker performs one authoritative preflight refresh, then<br>executes a correlated FIFO batch from server confirmations.  It does not<br>reopen Inventory after every item.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.storage.refresh(allow_cached_backpack, source)</div>
+            <p class="method-desc">Refresh storage using the existing worker flow.<br><br>``allow_cached_backpack`` is for flows that already received real<br>server A0/8D/8E slot updates.  It never writes slots manually; it only<br>prevents a missing B0 panel acknowledgement from becoming a false<br>refresh failure.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.storage.store(item_id, count, allow_cached_backpack, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.storage.store_item(item_id, count, allow_cached_backpack, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.storage.store_slot(backpack_slot, inventory_slot)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.storage.retrieve(item_id, count, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.storage.retrieve_item(item_id, count, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.storage.retrieve_slot(inventory_slot, backpack_slot, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.storage.status()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.storage.busy()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.storage.moved()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.storage.requested()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.storage.last_error()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.storage.last_packet()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="storagestatusapi" class="api-section card">
+        <h2 class="api-title">StorageStatusAPI</h2>
+        <p class="muted">Read-only status API for storage worker state.<br><br>This keeps scripts/future workers from reading worker internals or parsing<br>log text.  Packet logic remains owned by InventoryTransferWorker.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.storagestatus.status()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.storagestatus.busy()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.storagestatus.action()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.storagestatus.phase()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.storagestatus.moved()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.storagestatus.requested()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.storagestatus.last_error()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.storagestatus.last_packet()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.storagestatus.result_status()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.storagestatus.remaining()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.storagestatus.error_code()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="taskrouterapi" class="api-section card">
+        <h2 class="api-title">TaskRouterAPI</h2>
+        <p class="muted">Module API untuk TaskRouterAPI</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.taskrouter.configure(base_xyz, radius, enabled)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.taskrouter.enable(value)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.taskrouter.define(name, go_way, back_way, enabled, pending, priority)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.taskrouter.task_enabled(name, value)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.taskrouter.pending(name, value)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.taskrouter.arrive()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.taskrouter.next(dispatch)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.taskrouter.running(name)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.taskrouter.complete(name, ok, error, dispatch_back)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.taskrouter.retry(name)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.taskrouter.new_cycle()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.taskrouter.status()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="tradehouseapi" class="api-section card">
+        <h2 class="api-title">TradeHouseAPI</h2>
+        <p class="muted">Queued Trade House offer API. Price is mandatory per request.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.tradehouse.sell(item_id, price, count)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.tradehouse.sell_all(item_id, price)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.tradehouse.sell_many(offers)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.tradehouse.leave()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.tradehouse.status()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.tradehouse.request_result(request_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="useapi" class="api-section card">
+        <h2 class="api-title">UseAPI</h2>
+        <p class="muted">Compact action API.<br><br>use.item/use.slot are backpack shortcuts, not Inventory actions.<br>Skill use checks SkillState first, then queues a skill action.</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.use.item(item_id, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.use.item_id(item_id, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.use.count(item_id)</div>
+            <p class="method-desc">Return server-confirmed use count, total or for one item_id.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.use.summary()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.use.slot(slot_1_to_9, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.use.backpack_slot(slot_1_to_9, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.use.open_backpack()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.use.pickup(slot)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.use.drop(slot, item_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.use.store(item_id, count)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.use.retrieve(item_id, count)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.use.skill(slot, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.use.skill_r(source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.use.skill_l(source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.use.r(source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.use.l(source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="waypointapi" class="api-section card">
+        <h2 class="api-title">WaypointAPI</h2>
+        <p class="muted">Module API untuk WaypointAPI</p>
+        <div class="method-list">
+
+          <div class="method-card">
+            <div class="code-block">api.waypoint.exists(way_id, require_points)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.waypoint.set_way(way_id, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.waypoint.get_way()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.waypoint.record(value, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.waypoint.add_current(reason, record_only, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.waypoint.add_xyz(x, y, z, reason, record_only, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.waypoint.add_portal_action(action, reason)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.waypoint.clear(source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.waypoint.save(path, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.waypoint.load(path, source)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.waypoint.rename(name, way_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.waypoint.name(way_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.waypoint.points(way_id)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.waypoint.nearest_index(way_id, position)</div>
+            <p class="method-desc">Return nearest waypoint index through the public API layer.<br><br>Playback, off-route recovery, and scripts should use this API instead<br>of creating their own nearest resolver so all components agree on the<br>same same-Z-first distance rule.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.waypoint.nearest_point(way_id, position)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.waypoint.nearest_distance(point, position)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.waypoint.configure_domain_switch(switch_spot, shop_spot, hunt_way, to_shop_way, back_way, enabled)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.waypoint.enable_domain_switch(value)</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="code-block">api.waypoint.domain_switch_summary()</div>
+            <p class="method-desc">Tidak ada deskripsi.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>© <span data-year></span> VMmo. All rights reserved.</div>
+    <div>Created by Adriana Vit</div>
+  </div>
+</footer>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+// Sidebar active state
+const sections = document.querySelectorAll('.api-section');
+const navLinks = document.querySelectorAll('.docs-sidebar nav a');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    if (pageYOffset >= sectionTop - 100) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+});
+</script>
+</body>
+</html>
