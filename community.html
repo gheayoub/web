@@ -7,19 +7,23 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
     .post-card { margin-top: 15px; padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03); }
-    .post-title { margin: 0 0 5px 0; font-size: 1.2rem; }
-    .post-meta { font-size: 0.8rem; color: #aaa; margin-bottom: 10px; }
-    .post-content { white-space: pre-wrap; font-size: 0.95rem; margin-bottom: 15px; line-height: 1.5; }
+    .post-title { margin: 0 0 5px 0; font-size: 1.05rem; }
+    .post-meta { font-size: 0.75rem; color: #aaa; margin-bottom: 10px; }
+    .post-content { white-space: pre-wrap; font-size: 0.85rem; margin-bottom: 15px; line-height: 1.5; }
     .form-group { margin-bottom: 15px; }
-    .form-group label { display: block; margin-bottom: 5px; font-weight: 500; font-size: 0.9rem; }
-    .form-group input[type="text"], .form-group textarea, .form-group input[type="file"] {
-      width: 100%; padding: 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); 
-      background: rgba(0,0,0,0.2); color: white; box-sizing: border-box; font-family: inherit;
+    .form-group label { display: block; margin-bottom: 5px; font-weight: 500; font-size: 0.85rem; }
+    .form-group input[type="text"], .form-group textarea, .form-group select {
+      width: 100%; padding: 8px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); 
+      background: rgba(0,0,0,0.2); color: white; box-sizing: border-box; font-family: inherit; font-size: 0.85rem;
     }
     .form-group textarea { min-height: 100px; resize: vertical; }
     .loader { display: none; text-align: center; margin: 20px 0; font-weight: bold; }
-    .file-attachment { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); padding: 8px 12px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; }
-    .file-attachment:hover { background: rgba(255,255,255,0.2); }
+    .badge { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; background: rgba(255,255,255,0.1); margin-right: 5px; vertical-align: middle; }
+    .btn-edit { background: rgba(255,255,255,0.1); color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 0.75rem; }
+    .btn-edit:hover { background: rgba(255,255,255,0.2); }
+    .post-header { display: flex; justify-content: space-between; align-items: flex-start; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center; }
+    .modal-content { background: #1a1a24; padding: 20px; border-radius: 8px; width: 90%; max-width: 500px; border: 1px solid rgba(255,255,255,0.1); }
   </style>
 </head>
 <body>
@@ -69,6 +73,16 @@
             <input type="text" id="postTitle" required placeholder="Contoh: Cara setup VMmo untuk game X">
           </div>
           <div class="form-group">
+            <label for="postCategory">Kategori</label>
+            <select id="postCategory" required>
+              <option value="Tutorial">Tutorial</option>
+              <option value="Script">Script</option>
+              <option value="Tanya Jawab">Tanya Jawab (Q&A)</option>
+              <option value="Diskusi">Diskusi</option>
+              <option value="Lainnya">Lainnya</option>
+            </select>
+          </div>
+          <div class="form-group">
             <label for="postContent">Isi Artikel</label>
             <textarea id="postContent" required placeholder="Tulis panduan atau penjelasan Anda di sini... (Paste link file Anda di sini)"></textarea>
           </div>
@@ -87,6 +101,38 @@
     </div>
   </div>
 </main>
+
+<!-- Modal Edit Postingan -->
+<div class="modal-overlay" id="editModal">
+  <div class="modal-content card">
+    <h3 style="margin-top:0">Edit Postingan</h3>
+    <form id="editForm">
+      <input type="hidden" id="editPostId">
+      <div class="form-group">
+        <label for="editPostTitle">Judul</label>
+        <input type="text" id="editPostTitle" required>
+      </div>
+      <div class="form-group">
+        <label for="editPostCategory">Kategori</label>
+        <select id="editPostCategory" required>
+          <option value="Tutorial">Tutorial</option>
+          <option value="Script">Script</option>
+          <option value="Tanya Jawab">Tanya Jawab (Q&A)</option>
+          <option value="Diskusi">Diskusi</option>
+          <option value="Lainnya">Lainnya</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="editPostContent">Isi Artikel</label>
+        <textarea id="editPostContent" required></textarea>
+      </div>
+      <div style="display:flex; gap: 10px;">
+        <button type="submit" id="saveEditBtn" class="btn btn-primary btn-block">Simpan Perubahan</button>
+        <button type="button" id="cancelEditBtn" class="btn btn-secondary btn-block">Batal</button>
+      </div>
+    </form>
+  </div>
+</div>
 
 <footer class="footer">
   <div class="container footer-inner">
